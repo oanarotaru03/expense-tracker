@@ -35,9 +35,23 @@ function renderExpenses() {
         const span = document.createElement("span");
         span.textContent = `${expense.name} (${expense.category}): ${expense.amount} RON`;
 
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.classList.add("edit-btn");
+
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
         deleteBtn.classList.add("delete-btn");
+
+        editBtn.addEventListener("click", () => {
+            const newAmount = prompt("Enter new amount:", expense.amount);
+
+            if (newAmount !== null && !isNaN(parseFloat(newAmount))) {
+                expenses[index].amount = parseFloat(newAmount);
+                saveExpenses();
+                renderExpenses();
+            }
+        });
 
         deleteBtn.addEventListener("click", () => {
             expenses.splice(index, 1);
@@ -46,6 +60,7 @@ function renderExpenses() {
         });
 
         li.appendChild(span);
+        li.appendChild(editBtn);
         li.appendChild(deleteBtn);
         expenseList.appendChild(li);
     });
