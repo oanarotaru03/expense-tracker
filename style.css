@@ -125,3 +125,18 @@ h1 {
 .delete-btn:hover {
     background-color: #c0392b;
 }
+#categoryBreakdown {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.category-tag {
+    background-color: #d6eaf8;
+    color: #1a5276;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}

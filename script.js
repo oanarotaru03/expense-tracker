@@ -65,14 +65,35 @@ function renderExpenses() {
         expenseList.appendChild(li);
     });
 
-    updateTotal();
+updateTotal();
+renderCategoryBreakdown();
 }
 
 function updateTotal() {
     const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
     totalDisplay.textContent = `${total} RON`;
 }
+function renderCategoryBreakdown() {
+    const breakdown = document.getElementById("categoryBreakdown");
+    breakdown.innerHTML = "";
 
+    const totals = {};
+
+    expenses.forEach((expense) => {
+        if (totals[expense.category]) {
+            totals[expense.category] += expense.amount;
+        } else {
+            totals[expense.category] = expense.amount;
+        }
+    });
+
+    for (const category in totals) {
+        const tag = document.createElement("span");
+        tag.classList.add("category-tag");
+        tag.textContent = `${category}: ${totals[category]} RON`;
+        breakdown.appendChild(tag);
+    }
+}
 function saveExpenses() {
     localStorage.setItem("expenses", JSON.stringify(expenses));
 }
