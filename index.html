@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1>Expense Tracker</h1>
+
+        <div class="balance-card">
+            <p>Total Spent</p>
+            <h2 id="totalDisplay">0 RON</h2>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="nameInput" placeholder="Expense name...">
+            <input type="number" id="amountInput" placeholder="Amount">
+            <select id="categoryInput">
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Bills">Bills</option>
+                <option value="Fun">Fun</option>
+                <option value="Other">Other</option>
+            </select>
+            <button id="addBtn">Add Expense</button>
+        </div>
+
+        <ul id="expenseList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #eef2f5;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.app {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1a5276;
+    margin-top: 0;
+}
+
+.balance-card {
+    background-color: #1a5276;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.balance-card p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.balance-card h2 {
+    margin: 5px 0 0;
+    font-size: 32px;
+}
+
+.input-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.input-area input,
+.input-area select {
+    padding: 10px;
+    border: 2px solid #d6eaf8;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#nameInput {
+    flex: 2;
+    min-width: 120px;
+}
+
+#amountInput {
+    flex: 1;
+    min-width: 80px;
+}
+
+#addBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a5276;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#addBtn:hover {
+    background-color: #154360;
+}
+
+#expenseList {
+    list-style: none;
+    padding: 0;
+}
+
+#expenseList li {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
