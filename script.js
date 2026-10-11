@@ -4,7 +4,8 @@ const categoryInput = document.getElementById("categoryInput");
 const addBtn = document.getElementById("addBtn");
 const expenseList = document.getElementById("expenseList");
 const totalDisplay = document.getElementById("totalDisplay");
-
+const countDisplay = document.getElementById("countDisplay");
+const clearBtn = document.getElementById("clearBtn");
 let expenses = [];
 
 function addExpense() {
@@ -66,6 +67,11 @@ function renderExpenses() {
     });
 
 updateTotal();
+        if (expenses.length === 1) {
+        countDisplay.textContent = "1 expense";
+    } else {
+        countDisplay.textContent = `${expenses.length} expenses`;
+    }
 renderCategoryBreakdown();
 }
 
@@ -107,5 +113,10 @@ function loadExpenses() {
 }
 
 addBtn.addEventListener("click", addExpense);
+clearBtn.addEventListener("click", () => {
+    expenses = [];
+    saveExpenses();
+    renderExpenses();
+});
 
 loadExpenses();
